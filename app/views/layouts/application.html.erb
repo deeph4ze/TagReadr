@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TagReadr</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="uppertab">
+	<form id="search" action="/home/get_instagram" method = "post">
+		Enter your tags here:<input id="searchtext" type="text" name="tags">
+		<input id ="submit" type="submit" value ="Read em!">
+	</form>
+</div>
+
+
+<div id="container">
+<%= yield %>
+</div>
+
+</body>
+</html>

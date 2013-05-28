@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<% @tag_recent_media.each do |media| %>
+		<div class="image">
+		<img src="<%=media.images.thumbnail.url%>">
+		</div>
+	<% end %>
+
+	<% @tag_recent_tweets.results.each do |status| %>
+		<div class="tweet">
+		@<%= status.user.screen_name %> : <%=status.text%> 
+		<br>
+		</div>
+	<% end %>
+
+
+</body>
+</html>
