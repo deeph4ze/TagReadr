@@ -3,9 +3,11 @@
 <head>
 </head>
 <body>
-	<% @tag_recent_media.each do |media| %>
-		<div class="image">
-		<img src="<%=media.images.thumbnail.url%>">
+	<% @tag_recent_instagrams.each do |instagram| %>
+		<div class="instagram">
+		<img src="<%=instagram.images.standard_resolution.url%>">
+		<%= instagram.user.username if instagram.user%>
+		<%= ": " + instagram.caption.text if instagram.caption %>
 		</div>
 	<% end %>
 

@@ -3,23 +3,6 @@ require 'twitter'
 
 class HomeController < ApplicationController
 
-  def view
-    @tag = flash[:tags]
-    @tag ||= "sf"
-    @twitter_tag = "#" + @tag
-    @twitter_tag ||= "#sf"
-    @tag_recent_media = Instagram.tag_recent_media(@tag, :count => 20)
-    @tag_recent_tweets = Twitter.search(@twitter_tag, :count => 10, :results_type => 'recent')
-  end
-
-  def get_tags
-  end
-  def get_instagram
-    #probably will need to implement multiple tag retrieval in here?
-    flash[:tags] = params[:tags]
-    redirect_to :controller => 'home', :action => 'view'
-  end
-
   def connect
     Instagram.configure do |config|
       config.client_id ="4e8e2d519ff84f758e3640c8ec39c936"
@@ -35,6 +18,37 @@ class HomeController < ApplicationController
     redirect_to :controller => 'home', :action => 'view'
   end
 
-  def get_tweets
+
+  def view
+    @tag = params[:tags]
+    @tag ||= "sfgiants"
+    @twitter_tag = "#" + @tag
+    @twitter_tag ||= @tag
+    #@content = get_tags_media(@tag)
+    @tag_recent_instagrams = Instagram.tag_recent_media(@tag, :count => 20)
+    @tag_recent_tweets = Twitter.search(@twitter_tag, :count => 20, :results_type => 'recent')
   end
+
+  def tokenize_tags
+  end
+
+  def get_tags_media(tags)
+    content = []
+    tags.each do |tag|
+      content.append(get_media(tag))
+    end
+    #returns array of hashes {instagram/tweet: respective objects }
+    return content
+  end
+
+  def get_media(tag)
+    #probably will need to implement multiple tag retrieval in here?
+    tag_media = {
+    "instagrams" => Instagram.tag_recent_media(@tag, :count => 10),
+    "tweets" => Twitter.search(@twitter_tag, :count => 10, :results_type => 'recent')
+    }
+    return tag_media
+  end
+
+
 end

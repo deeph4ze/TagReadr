@@ -2,17 +2,11 @@ TagReadr::Application.routes.draw do
 
   get "home/view"
 
-  get "home/get_tags"
-
-  get "home/get_instagram"
-
-  get "home/get_tweets"
-
   get "home/connect"
 
-  post "home/get_instagram"
+  post "home/view"
 
-  root to: 'home#connect', :as => ""
+  root to: 'home#connect'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

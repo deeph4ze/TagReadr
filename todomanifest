@@ -1,7 +1,10 @@
 MANIFEST OF ITEMS NEEDED TO BE DONE:
 
-[ ]Search box CSS formatting
+
 [ ]Textboxlist implementation
 [ ]Multiple Search Result
 [ ]Multiple Search Display
 [ ]Display Layout/CSS
+[ ]Search box CSS formatting
+[ ]Size by weight
+[ ]Implement each item in its own partial?

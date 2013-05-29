@@ -12,16 +12,17 @@
  *= require_tree .
 */
 body{
-	font-family:'Open Sans', sans-serif;
+	background-image: url('bokehbg.jpg');
+	font-family:'Helvetica', sans-serif;
 	color: #DEDEDE;
 	font-size: 0.8em;
-	background-color: gray;
+	font-weight: bold;
 }
 
-.form{
-	border: #aaa 1px solid;
-	background: #DDDDDD;
-	border-radius: 4px;
+#search{
+	display:block;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .search{	
@@ -42,14 +43,31 @@ body{
 
 }
 
-.image{
+.instagram{
+	background-color: #F6F6F6;
+	color: #2b2b2b;
+	border: 5px #F6F6F6 solid;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px #111111;
+	float: left;
+	margin: 10px 10px 10px 10px;
+	height: auto;
+	text-align: center;
+	font-weight: semibold;
+	
+}
+.tweet{
+	background-color: #2b2b2b;
+	border: 3px #2b2b2b solid;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #111111;
+	margin: 10px 10px 10px 10px;
+	float:left;
 	
 }
 
 img{
-	border: 5px gray solid;
-	border-radius: 10px;
-	box-shadow: 3px 3px 3px #444;
-	float: right;
-	margin: 0 0 10px 10px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
 }
