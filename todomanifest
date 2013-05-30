@@ -1,10 +1,15 @@
 MANIFEST OF ITEMS NEEDED TO BE DONE:
 
 
-[ ]Textboxlist implementation
-[ ]Multiple Search Result
-[ ]Multiple Search Display
-[ ]Display Layout/CSS
+[x]Tokeninput implementation
+[x]Multiple Search Result
+[x]Multiple Search Display
+[ ]Implement each item in its own partial?
+[ ]Error Catching
 [ ]Search box CSS formatting
 [ ]Size by weight
-[ ]Implement each item in its own partial?
+[ ]Sort by time
+[ ]Animation
+[ ]T.co links(mouseover load?)
+[ ]Social Media Sharing
+[ ]Hosting?
