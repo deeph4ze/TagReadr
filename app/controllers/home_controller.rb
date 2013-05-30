@@ -20,35 +20,30 @@ class HomeController < ApplicationController
 
 
   def view
-    @tag = params[:tags]
-    @tag ||= "sfgiants"
-    @twitter_tag = "#" + @tag
-    @twitter_tag ||= @tag
-    #@content = get_tags_media(@tag)
-    @tag_recent_instagrams = Instagram.tag_recent_media(@tag, :count => 20)
-    @tag_recent_tweets = Twitter.search(@twitter_tag, :count => 20, :results_type => 'recent')
+    @tags = params[:tags]
+    @tags ||= "sfgiants"
+    @tagsArr = @tags.split(',')
+    #@twitter_tag = "#" + @tag
+    #@twitter_tag ||= @tag
+    @content = get_tags_media(@tagsArr)
+    #@tag_recent_instagrams = Instagram.tag_recent_media(@tag, :count => 20)
+    #@tag_recent_tweets = Twitter.search(@twitter_tag, :count => 20, :results_type => 'recent')
   end
 
   def tokenize_tags
   end
 
+
   def get_tags_media(tags)
     content = []
     tags.each do |tag|
-      content.append(get_media(tag))
+      content.append({
+        "instagrams" => Instagram.tag_recent_media(tag, :count => 10),
+        "tweets" => Twitter.search(("#"+tag), :count => 10, :results_type => 'recent')
+        })
     end
     #returns array of hashes {instagram/tweet: respective objects }
     return content
   end
-
-  def get_media(tag)
-    #probably will need to implement multiple tag retrieval in here?
-    tag_media = {
-    "instagrams" => Instagram.tag_recent_media(@tag, :count => 10),
-    "tweets" => Twitter.search(@twitter_tag, :count => 10, :results_type => 'recent')
-    }
-    return tag_media
-  end
-
 
 end

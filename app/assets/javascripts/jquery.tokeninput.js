@@ -15,7 +15,7 @@ var DEFAULT_SETTINGS = {
     method: "GET",
     queryParam: "q",
     searchDelay: 300,
-    minChars: 1,
+    minChars: 20,
     propertyToSearch: "name",
     jsonContainer: null,
     contentType: "json",
@@ -29,7 +29,7 @@ var DEFAULT_SETTINGS = {
     noResultsText: "No results",
     searchingText: "Searching...",
     deleteText: "&times;",
-    animateDropdown: true,
+    animateDropdown: false,
     theme: null,
     zindex: 999,
     resultsLimit: null,
@@ -40,7 +40,7 @@ var DEFAULT_SETTINGS = {
     tokenLimit: null,
     tokenDelimiter: ",",
     preventDuplicates: false,
-    tokenValue: "id",
+    tokenValue: "name",
 
     // Behavioral settings
     allowFreeTagging: true,

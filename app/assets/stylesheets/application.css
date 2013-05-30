@@ -12,7 +12,7 @@
  *= require_tree .
 */
 body{
-	background-image: url('bokehbg.jpg');
+	background-image: url('seamlessbokehdark.jpg');
 	font-family:'Helvetica', sans-serif;
 	color: #DEDEDE;
 	font-size: 0.8em;
@@ -29,6 +29,7 @@ body{
 	border: #aaa 1px solid;
 	background: #DDDDDD;
 	border-radius: 3px;
+	text-align: center;
 
 }
 
@@ -58,11 +59,13 @@ body{
 }
 .tweet{
 	background-color: #2b2b2b;
-	border: 3px #2b2b2b solid;
+	border: 5px #F6F6F6 solid;
 	border-radius: 5px;
 	box-shadow: 5px 5px 5px #111111;
 	margin: 10px 10px 10px 10px;
+	padding: 5px;
 	float:left;
+	width: 500px;
 	
 }
 

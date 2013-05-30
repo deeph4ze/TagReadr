@@ -7,17 +7,19 @@
   <script type="text/javascript" src=""https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js""></script>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" type="text/css" href="/stylesheets/token-input.css" />
-  <script type="text/javascript">
-    $(document).ready(function () {
-    $("#search").tokenInput("/url/to/your/script/");
-});
-</script>
 </head>
 <body>
 <div id="uppertab">
 	<form id="search" action="/home/view" method = "post">
-		Enter your tags here:<input id="searchtext" type="text" name="tags">
-		<input id ="submit" type="submit" value ="Read em!">
+		Enter your tags here:
+    <input id="searchtext" type="text" name="tags">
+		<input id="submit" type="submit" value ="Read em!">
+      <script type="text/javascript">
+    $(document).ready(function () {
+      $("#searchtext").tokenInput();
+    });
+</script>
+
 	</form>
 </div>
 

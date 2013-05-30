@@ -3,6 +3,7 @@ $(document).ready(function(){
 	$('.tweet').each(function(){
 		size = ((Math.random()+1)*2)-1;
 		$(this).css("font-size",(String(size)+"em"));
+            $(this).css("width", (String(size*150)+"px"));
 	});
 	$('img').each(function(){
 		size = ((Math.random()+1)*200);

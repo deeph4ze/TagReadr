@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<% @content.each do |content| %>
+		<% content["instagrams"].each do |instagram| %>
+			<div class="instagram">
+			<img src="<%=instagram.images.standard_resolution.url%>">
+			<%= instagram.user.username if instagram.user%>
+			<%= ": " + instagram.caption.text if instagram.caption %>
+			</div>
+		<% end %>
+
+		<% content["tweets"].results.each do |status| %>
+			<div class="tweet">
+			@<%= status.user.screen_name %> : <%=status.text%> 
+			<br>
+			</div>
+		<% end %>
+	<% end %>
+
+
+
+
+</body>
+</html>
