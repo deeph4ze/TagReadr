@@ -1,15 +1,19 @@
 MANIFEST OF ITEMS NEEDED TO BE DONE:
-
+x = completed
+o = handled, but needs more work
 
 [x]Tokeninput implementation
 [x]Multiple Search Result
 [x]Multiple Search Display
+[x]Each thing link to its respective tweet/instagram
+[ ]Change routing so page loads on root
 [ ]Implement each item in its own partial?
-[ ]Error Catching
+[o]Error Catching
 [ ]Search box CSS formatting
-[ ]Size by weight
-[ ]Sort by time
+[ ]Size by weight (need to rethink formatting size for masonry)
+[ ]Sort by time ( need to rethink formatting size for masonry /// check out moment.js for time library)
 [ ]Animation
+
 [ ]T.co links(mouseover load?)
 [ ]Social Media Sharing
 [ ]Hosting?

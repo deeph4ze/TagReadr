@@ -1,5 +1,6 @@
 require 'instagram'
 require 'twitter'
+require 'json'
 
 class HomeController < ApplicationController
 
@@ -30,20 +31,31 @@ class HomeController < ApplicationController
     #@tag_recent_tweets = Twitter.search(@twitter_tag, :count => 20, :results_type => 'recent')
   end
 
-  def tokenize_tags
-  end
-
-
+  private
   def get_tags_media(tags)
     content = []
     tags.each do |tag|
-      content.append({
-        "instagrams" => Instagram.tag_recent_media(tag, :count => 10),
-        "tweets" => Twitter.search(("#"+tag), :count => 10, :results_type => 'recent')
-        })
+        begin
+          instagram_response = Instagram.tag_recent_media(tag, count: 20)
+          twitter_response = Twitter.search(("#"+tag), :count => 20, :results_type => 'recent')
+          content.append({
+          "instagrams" => instagram_response,
+           "tweets" => twitter_response
+          })
+        rescue
+          content.append({"tweets" => Twitter.search(("#"+tag), :count => 20, :results_type => 'recent')})
+        end
     end
     #returns array of hashes {instagram/tweet: respective objects }
     return content
+  end
+
+  private
+  def check_json(json)
+    JSON.parse(json)
+      return true
+    rescue JSON::ParserError
+      return false  
   end
 
 end

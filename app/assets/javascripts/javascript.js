@@ -12,7 +12,7 @@ $(document).ready(function(){
 		$(this).parent().css("width", (String(size+5)+"px"));
 		$(this).parent().css("font-size", (String(size/240)+"em"))
 	});
-	$('#container').each(function(){
+	$('#contentcontainer').each(function(){
             // get current ul
             var $div = $(this);
             // get array of list items in current ul
@@ -30,5 +30,11 @@ $(document).ready(function(){
             })
             // append list items to ul
             .appendTo($div);            
+      });
+
+      $(function(){
+      $('#contentcontainer').masonry({
+            columnWidth : 500
+            });
       });
 });
