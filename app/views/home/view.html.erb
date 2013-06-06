@@ -6,23 +6,21 @@
 	<% @content.each do |content| %>
 		<% if content["instagrams"] %>
 			<% content["instagrams"].each do |instagram| %>
-			
-			<div class="instagram" data-weight="" data-time="">
+			<div class="instagram" data-weight="<%=instagram.likes['count']%>" data-time="<%=instagram.created_time%>">
 			<a href="<%=instagram.link%>" target = "_blank">
 			<span class="itemlink"></span>
 			</a>
 			<img src="<%=instagram.images.standard_resolution.url%>">
 			<br> 	
 			<%= instagram.user.username if instagram.user%>
-			<%= ": " + instagram.caption.text if instagram.caption %>
-			<%= instagram.created_time %>
+			<%= ": " + instagram.caption.text if instagram.caption %>	
 			</div>
 			<%end%>
 		<% end %>
 
 		<% if content["tweets"] %>
 			<% content["tweets"].results.each do |status| %>
-				<div class="tweet" data-weight="" data-time="">
+				<div class="tweet" data-weight="<%=status.retweet_count%>" data-time="<%=status.created_at%>">
 				<a href="http://www.twitter.com/<%=status.user.screen_name%>/status/<%=status.id%>" target = "_blank">
 				<span class="itemlink"></span>
 				</a>

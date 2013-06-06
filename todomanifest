@@ -10,9 +10,11 @@ o = handled, but needs more work
 [ ]Implement each item in its own partial?
 [o]Error Catching
 [ ]Search box CSS formatting
+[ ]Fix the background so it does not resize with browser
 [ ]Size by weight (need to rethink formatting size for masonry)
 [ ]Sort by time ( need to rethink formatting size for masonry /// check out moment.js for time library)
 [ ]Animation
+[ ]Search box suggest tag?
 
 [ ]T.co links(mouseover load?)
 [ ]Social Media Sharing
