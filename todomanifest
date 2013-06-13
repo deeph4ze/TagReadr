@@ -11,7 +11,7 @@ o = handled, but needs more work
 [o]Error Catching
 [ ]Search box CSS formatting
 [ ]Fix the background so it does not resize with browser
-[ ]Size by weight (need to rethink formatting size for masonry)
+[x]Size by weight (need to rethink formatting size for masonry)
 [ ]Sort by time ( need to rethink formatting size for masonry /// check out moment.js for time library)
 [ ]Animation
 [ ]Search box suggest tag?

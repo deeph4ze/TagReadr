@@ -58,9 +58,9 @@ li.token-input-token span {
 }
 
 li.token-input-selected-token {
-    background-color: #5670a6;
-    border: 1px solid #3b5998;
-    color: #fff;
+    background-color: #FEF6E6;
+    border: 1px solid black;
+    color: #2b2b2b;
 }
 
 li.token-input-input-token {

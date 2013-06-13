@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-	background-image: url('seamlessbokehdark.jpg');
+	background-color: black;
+	//background-image: url('seamlessbokehdark.jpg');
 	font-family:'Helvetica', sans-serif;
 	color: #DEDEDE;
 	font-size: 0.8em;
@@ -22,11 +23,12 @@ body{
 	left : 0;
 	border-bottom : 4px solid #E1D2BE;
 	background-color: black;
+	padding:10px bottom;
 }
 
 #search{
 	
-	float: right;
+	margin: 0 auto;
 }
 
 #submit{
@@ -36,12 +38,14 @@ body{
 #containerwrapper{
 	top:15%;
 	position: absolute;
+	padding: 10px top;
 }
 
 #contentcontainer{
 	width: 100%;
 	position: relative;
 	float: top;
+	padding: 10px top;
 }
 
 
@@ -97,6 +101,9 @@ body{
 	
 }
 
+#contentstage{
+}
+
 .itemlink {
   position:absolute; 
   width:100%;
@@ -106,7 +113,7 @@ body{
 
   /* edit: added z-index IF YOU WANT TO PUT ADDITION LINKS Z-INDEX MUST BE > 1
   http://stackoverflow.com/questions/796087/make-a-div-into-a-link */
-  z-index: 1;	
+  z-index: 1;
  
 }
 
